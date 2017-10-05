@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Charts</title>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body ng-cloak ng-app = "myApp"  ng-controller="testController">
+<div class= "container">
+	<h3>Plotting charts for values of A, B and their average</h3>
+	<div class="row">
+		<div class="col-xs-6">
+			<!--A : <input type="number" min= 0 max = 1000 ng-model = "aVal"> -->
+		  	<input type="range" min="1" max="1000"  class="slider" id="myRange" ng-model = "aVal">
+		  	<span>Value of A : {{aVal}}</span>
+		</div>
+		<div class="col-xs-6" >
+			<!--B: <input type="number" min= 0 max = 1000 ng-model = "bVal"> -->
+			<input type="range" min="1" max="1000" class="slider" id="myRange" ng-model = "bVal">
+			<span>Value of B : {{bVal}}</span>
+		</div>
+		<div class="text-center">Average  : {{avg}}</span>
+	</div>
+	<div class="row">
+		<div class="col-xs-6"><canvas  id = "aChart"></canvas></div>
+		<div class="col-xs-6"><canvas  id = "bChart"></canvas></div>
+		<div class="col-xs-6"><canvas  id = "avgChart"></canvas></div>
+		
+	</div>
+</div>
+	<script  src="./lib/angular.js"></script>
+	<script  src="app.js"></script>
+</body>
+</html>
